@@ -4,7 +4,6 @@ import { HEROES } from './mock-heroes';
 import { Logger } from './logger.service';
 
 @Injectable()
-
 export class HeroService {/*
   private heroes: Hero[] = [];
 
