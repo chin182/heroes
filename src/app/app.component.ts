@@ -51,7 +51,8 @@ export class AppComponent {
         <my-heroes id="authorized" *ngIf="isAuthorized"></my-heroes>
         <my-heroes id="unauthorized" *ngIf="!isAuthorized"></my-heroes>
         `,
-  providers: [ Logger ]
+  providers: [ Logger ],
+  styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {
