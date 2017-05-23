@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 
 import { HEROES } from './mock-heroes';
-import { Logger } from './logger.service';
+import { Logger } from '../logger.service';
 
 @Injectable()
-export class HeroService {/*
-  private heroes: Hero[] = [];
+export class HeroService {
+
+  /*private heroes: Hero[] = [];
 
   constructor(
     private backend: BackendService,
@@ -19,10 +20,11 @@ export class HeroService {/*
     return this.heroes;
   }*/
 
-  constructor(private logger: Logger){}
+  constructor(private logger: Logger, private isAuthorized: boolean){ }
 
   getHeroes() {
-    this.logger.log('Getting heroes ...');
-    return HEROES;
+    let auth = this.isAuthorized ? 'authorized ' : 'unauthorized';
+    this.logger.log(`Getting heroes for ${auth} user.`);
+    return HEROES.filter(hero => this.isAuthorized || !hero.isSecret);
   }
 }

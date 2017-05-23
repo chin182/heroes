@@ -6,7 +6,7 @@ import { HeroService } from './hero.service';
 
 @Component({
   selector: 'hero-list',
-  templateUrl: './hero-list.component.html'
+  templateUrl: './hero-list.component.html',
   //providers: [ HeroService ]
 })
 /*
